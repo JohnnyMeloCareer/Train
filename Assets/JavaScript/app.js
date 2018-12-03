@@ -23,7 +23,7 @@ var config = {
   var database = firebase.database();
   
   // 2. Button for adding Employees
-  $("#add-employee-btn").on("click", function(event) {
+  $("#add-train-btn").on("click", function(event) {
     event.preventDefault();
   
     // Grabs user input
@@ -92,18 +92,23 @@ var config = {
     console.log(empBilled);
   
     // Create the new row
-    var newRow = $("<tr>").append(
-      $("<td>").text(empName),
-      $("<td>").text(empDestination),
-      $("<td>").text(empTimePretty),
-      $("<td>").text(empMonths), // < --- Fix
-      $("<td>").text(empFrequency),
-      $("<td>").text(empBilled) // < --- Fix
-    );
+    
   
     // Append the new row to the table
     $("#employee-table > tbody").append(newRow);
   });
+});
+
+var newRow;
+DataRef.ref().on("child_added",function(childSnapshot) {
+     newRow = $("<tr>").append(
+        $("<td>").text(childSnapshot.val().name),
+        $("<td>").text(childSnapshot.val().destination),
+        $("<td>").text(childSnapshot.val().frequency),
+        $("<td>").text(childSnapshot.val().time)
+      );
+      console.log("This is a new row", newRow);
+      $(".dataRow").append(newRow);
 });
   // Example Time Math
   // -----------------------------------------------------------------------------
