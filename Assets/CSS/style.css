@@ -1,0 +1,10 @@
+body {
+	background-image: url(../Images/Background.jpg);
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	margin-top: 0px;
+	margin: 0px;
+	padding: 0px;
+	border-color: #dddddd;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
