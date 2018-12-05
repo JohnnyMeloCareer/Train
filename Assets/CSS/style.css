@@ -8,3 +8,11 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover; 
 }
+
+.jumbotron {
+	background-image: url(../Images/harry-potter-wallpapers-29604-4900200.png);
+	padding-top: 95px;
+	padding-bottom: 170px;
+	border-radius: 6.3;
+	background-size: cover;
+}
